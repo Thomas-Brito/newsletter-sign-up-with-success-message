@@ -34,17 +34,18 @@
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: center;
+  gap: 1rem;
   padding: 2rem;
   max-width: 50%;
 }
 .main-text__title {
   font: 700 clamp(2rem, 2rem + 1vw, 3rem)/150% "Roboto", sans-serif;
 }
-.main-text__title, .main-text__paragraph, .main-text__item, .main-text__label {
+.main-text__title, .main-text__paragraph, .main-text__item, .main-text__label-1 {
   color: hsl(234, 29%, 20%);
   margin: 0;
 }
-.main-text__paragraph, .main-text__item, .main-text__button {
+.main-text__paragraph, .main-text__item, .main-text__button, .main-text__input, .main-text__input::placeholder {
   font: 400 1rem/150% "Roboto", sans-serif;
 }
 .main-text__list {
@@ -66,25 +67,39 @@
   list-style: none;
   padding: 0.5rem 0;
 }
-.main-text__label {
+.main-text__label-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.main-text__label-1, .main-text__label-2 {
   font: 700 0.75rem/150% "Roboto", sans-serif;
+}
+.main-text__label-2 {
+  color: hsl(4, 100%, 67%);
+  display: none;
 }
 .main-text__form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: center;
+  width: 100%;
 }
 .main-text__input, .main-text__button {
+  box-sizing: content-box;
   border-radius: 0.5rem;
   outline: none;
   padding: 1rem;
-  width: 100%;
+  max-width: 100%;
 }
 .main-text__button {
   background-color: hsl(234, 29%, 20%);
   border: none;
   color: hsl(0, 0%, 100%);
+  margin-top: 1rem;
 }
 .main-text__button:hover {
   background-image: linear-gradient(to left, hsl(347, 100%, 66%), hsl(13, 99%, 62%));
@@ -108,7 +123,37 @@
 }
 
 .thanks-card {
+  align-content: flex-start;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
   display: none;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: max(30vw, 10rem);
+}
+.thanks-card__image {
+  align-self: flex-start;
+}
+.thanks-card__title {
+  font: 700 clamp(2rem, 2rem + 1vw, 3rem)/150% "Roboto", sans-serif;
+}
+.thanks-card__paragraph, .thanks-card__button {
+  font: 400 1rem/150% "Roboto", sans-serif;
+}
+.thanks-card__button {
+  box-sizing: content-box;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  max-width: 100%;
+  background-color: hsl(234, 29%, 20%);
+  border: none;
+  color: hsl(0, 0%, 100%);
+  margin-top: 1rem;
+}
+.thanks-card__button:hover {
+  background-image: linear-gradient(to left, hsl(347, 100%, 66%), hsl(13, 99%, 62%));
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 64rem) {
@@ -139,6 +184,38 @@
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 100%;
+  }
+}
+.main-text__label-2--active {
+  display: block;
+}
+
+.main-text__input--error {
+  background-color: hsl(5, 100%, 95%);
+  border: 0.125rem solid hsl(4, 100%, 67%);
+  color: hsl(4, 100%, 67%);
+}
+
+.main-text__input--error::placeholder {
+  color: hsl(4, 100%, 67%);
+}
+
+.main--disabled {
+  display: none;
+}
+
+.thanks-card--active {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 64rem) {
+  .thanks-card--active {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 23.4375rem;
   }
 }
 

@@ -1,6 +1,5 @@
 @use 'theme';
 @use 'structure';
-@use 'state';
 
 .default {
   @include structure.display-flex($direction:row);
@@ -24,17 +23,18 @@
   @include structure.display-flex($direction:column);
   align-items: baseline;
   justify-content: center;
+  gap: 1rem;
   padding: 2rem;
   max-width: 50%;
   
   &__title {
     font: theme.$font-700-48px;
   }
-  &__title, &__paragraph, &__item, &__label {
+  &__title, &__paragraph, &__item, &__label-1 {
     color: theme.$Blue-800;
     margin: 0;
   }
-  &__paragraph, &__item, &__button {
+  &__paragraph, &__item, &__button, &__input, &__input::placeholder {
     font: theme.$font-400-16px;
   }
   &__list {
@@ -54,23 +54,35 @@
     list-style: none;
     padding: 0.5rem 0;
   }
-  &__label {
+  &__label-container {
+    @include structure.display-flex($direction:row);
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  &__label-1, &__label-2 {
     font: theme.$font-700-12px;
+  }
+  &__label-2 {
+    color: theme.$Red;
+    display: none;
   }
   &__form {
     @include structure.display-flex($direction:column);
-    gap: 1rem;
+    justify-content: center;
+    width: 100%;
   }
   &__input, &__button {
+    box-sizing: content-box;
     border-radius: 0.5rem;
     outline: none;
     padding: 1rem;
-    width: 100%;
+    max-width: 100%;
   }
   &__button {
     background-color: theme.$Blue-800;
     border: none;
     color: theme.$White;
+    margin-top: 1rem;
     &:hover {
       background-image: linear-gradient(to left, theme.$Cor-gradiente-1, theme.$Cor-gradiente-2);
       cursor: pointer;
@@ -94,7 +106,37 @@
 }
 
 .thanks-card {
+  align-content: flex-start;
+  background-color: theme.$White;
+  border-radius: 1rem;
   display: none;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: max(30vw, 10rem);
+  &__image {
+    align-self: flex-start;
+  }
+  &__title {
+    font: theme.$font-700-48px;
+  }
+  &__paragraph, &__button {
+    font: theme.$font-400-16px;
+  }
+  &__button {
+    box-sizing: content-box;
+    border-radius: 0.5rem;
+    outline: none;
+    padding: 1rem;
+    max-width: 100%;
+    background-color: theme.$Blue-800;
+    border: none;
+    color: theme.$White;
+    margin-top: 1rem;
+    &:hover {
+      background-image: linear-gradient(to left, theme.$Cor-gradiente-1, theme.$Cor-gradiente-2);
+      cursor: pointer;
+    }
+  }
 }
 
 @media only screen and (max-width: 64rem){
@@ -120,4 +162,5 @@
     @include structure.display-flex($direction:column);
     max-width: 100%;
   }
+  
 }

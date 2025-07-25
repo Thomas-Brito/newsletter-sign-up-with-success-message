@@ -1,0 +1,30 @@
+@use 'structure';
+
+.main-text__label-2--active {
+  display: block;
+}
+
+.main-text__input--error {
+  background-color: hsl(5, 100%, 95%);
+  border: 0.125rem solid hsl(4, 100%, 67%);
+  color: hsl(4, 100%, 67%);
+}
+
+.main-text__input--error::placeholder {
+  color: hsl(4, 100%, 67%);
+}
+
+.main--disabled {
+  display: none;
+}
+
+.thanks-card--active {
+  @include structure.display-flex($direction:column);
+}
+
+@media only screen and (max-width: 64rem){
+  .thanks-card--active {
+    @include structure.display-flex($direction:column);
+    min-width: 23.4375rem;
+  }
+}

@@ -6,61 +6,67 @@
   <meta data-theme="light">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="styles/style.css">
+  <script defer src="scripts/script.js"></script>
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 <body class="default">
 
   <!-- Sign-up form start -->
-  <main class="main">
+  <main class="main" id="main">
 
     <div class="main-image-mobile">
       <picture>
         <source class="main-image__image" media="(max-width: 1024px)" srcset="assets/images/illustration-sign-up-mobile.svg">
-        <img class="main-image__image">
+        <img class="main-image__image" alt="">
       </picture>
     </div>
 
     <div class="main-text">
       <h1 class="main-text__title">Stay updated!</h1>
       <p class="main-text__paragraph">Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul class="main-text__list">
+      <nav class="main-text__list">
         <div class="main-text__div-item">
           <img class="main-text__image" src="assets/images/icon-list.svg" alt="">
-          <li class="main-text__item">Product discovery and building what matters</li>
+          <span class="main-text__item">Product discovery and building what matters</span>
         </div>
         <div class="main-text__div-item">
           <img class="main-text__image" src="assets/images/icon-list.svg" alt="">
-          <li class="main-text__item">Measuring to ensure updates are a success</li>
+          <span class="main-text__item">Measuring to ensure updates are a success</span>
         </div>
         <div class="main-text__div-item">
           <img class="main-text__image" src="assets/images/icon-list.svg" alt="">
-          <li class="main-text__item">And much more!</li>
+          <span class="main-text__item">And much more!</span>
         </div>
-      </ul>
-      <form class="main-text__form" action="">
-        <label class="main-text__label" for="email">Email address</label>
-        <input class="main-text__input" type="text" name="email" id="email" placeholder="email@company.com">
-        <button class="main-text__button">Subscribe to monthly newsletter</button>
+      </nav>
+      <form class="main-text__form" id="form" action="" novalidate>
+        <div class="main-text__label-container">
+          <label class="main-text__label-1" for="email">Email address</label>
+          <label class="main-text__label-2" id="label" for="email">Valid email required</label>
+        </div>
+        <input class="main-text__input" type="email" name="email" id="email" placeholder="email@company.com">
+        <button class="main-text__button" type="submit">Subscribe to monthly newsletter</button>
       </form>
     </div>
 
     <div class="main-image-desktop">
       <picture>
         <source class="main-image-desktop__image" media="(min-width: 1024px)" srcset="assets/images/illustration-sign-up-desktop.svg">
-        <img class="main-image-desktop__image">
+        <img class="main-image-desktop__image" alt="">
       </picture>
     </div>
   </main>  
   <!-- Sign-up form end -->
   
   <!-- Success message start -->
-  <section class="thanks-card">
+  <section class="thanks-card" id="thanks-card">
 
-    <h2>Thanks for subscribing!</h2>
+    <img class="thanks-card__image" src="assets/images/icon-success.svg" alt="">
+
+    <h2 class="thanks-card__title">Thanks for subscribing!</h2>
   
-    <p>A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription.</p>
+    <p class="thanks-card__paragraph">A confirmation email has been sent to <span id="userEmail">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription.</p>
   
-    <button>Dismiss message</button>
+    <button class="thanks-card__button" id="thanks-card__button" type="submit">Dismiss message</button>
   </section>
   <!-- Success message end -->
 </body>
