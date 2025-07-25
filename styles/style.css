@@ -1,0 +1,145 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.default {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: hsl(235, 18%, 26%);
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  justify-content: space-between;
+  max-width: max(70vw, 20rem);
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 50%;
+}
+.main-text__title {
+  font: 700 clamp(2rem, 2rem + 1vw, 3rem)/150% "Roboto", sans-serif;
+}
+.main-text__title, .main-text__paragraph, .main-text__item, .main-text__label {
+  color: hsl(234, 29%, 20%);
+  margin: 0;
+}
+.main-text__paragraph, .main-text__item, .main-text__button {
+  font: 400 1rem/150% "Roboto", sans-serif;
+}
+.main-text__list {
+  padding: 0;
+}
+.main-text__div-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.main-text__image {
+  max-width: 1.5rem;
+}
+.main-text__item {
+  line-height: 110%;
+  list-style: none;
+  padding: 0.5rem 0;
+}
+.main-text__label {
+  font: 700 0.75rem/150% "Roboto", sans-serif;
+}
+.main-text__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.main-text__input, .main-text__button {
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  width: 100%;
+}
+.main-text__button {
+  background-color: hsl(234, 29%, 20%);
+  border: none;
+  color: hsl(0, 0%, 100%);
+}
+.main-text__button:hover {
+  background-image: linear-gradient(to left, hsl(347, 100%, 66%), hsl(13, 99%, 62%));
+  cursor: pointer;
+}
+
+.main-image-desktop {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2rem;
+  max-width: 50%;
+}
+.main-image-desktop__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-image-mobile {
+  display: none;
+}
+
+.thanks-card {
+  display: none;
+}
+
+@media only screen and (max-width: 64rem) {
+  .default {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 1rem;
+    max-width: max(23.4375rem, 36.5%);
+  }
+  .main-text {
+    padding: 0;
+    max-width: 75%;
+  }
+  .main-image-desktop {
+    display: none;
+  }
+  .main-image-mobile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

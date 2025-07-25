@@ -1,0 +1,17 @@
+:root {
+  color-scheme: light ;
+}
+
+  $font-400-16px: 400 1rem/150% "Roboto", sans-serif;
+  $font-400-24px: 400 1.5rem/150% "Roboto", sans-serif;
+  $font-700-12px: 700 0.75rem/150% "Roboto", sans-serif;
+  $font-700-48px: 700 clamp(2rem, calc(2rem + 1vw), 3rem)/150% "Roboto", sans-serif;
+
+  $Blue-700: hsl(235, 18%, 26%);
+  $Blue-800: hsl(234, 29%, 20%);
+  $Grey: hsl(0, 0%,58%);
+  $Red: hsl(4, 100%, 67%);
+  $White: hsl(0, 0%, 100%);
+
+  $Cor-gradiente-1: hsl(347, 100%, 66%);
+  $Cor-gradiente-2: hsl(13, 99%, 62%);
